@@ -7,7 +7,6 @@ var Utility = (function(){
     if(el.movie != undefined){
       articles +=
          `
-         <h2>Results for: ${el.searchQuery}</h2>
          <article>
             <img src="${el.poster}">
             <h2>${el.movie}</h2>
@@ -16,8 +15,10 @@ var Utility = (function(){
           </article>
           `;
     } else {
-      articles = `<h2>We're sorry</h2>
-                  <p>We couldn't find any results</p>`;
+      articles = `<div class="sorry">
+                  <h2>We're sorry.</h2>
+                  <p>We couldn't find any results</p>
+                  </div`;
     }
     return articles
 

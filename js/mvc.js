@@ -32,14 +32,15 @@ class HTML {
     this.html = '';
   }
 
-  addObject(art) {
-    this.html = art;
+  addObject(obj, search) {
+    this.html += `<h2>Results for: ${search}</h2>`
+    this.html += obj;
   }
 }
 
 class HTML2 {
   constructor() {
-    this.html = '';
+    this.html += '';
   }
 
   addObject(obj) {
@@ -64,8 +65,14 @@ class View {
   display() {
     let location = document.querySelector('#forJosh');
     let article = Utility.make(this.do);
-    this.HTML.addObject(article);
+    this.HTML.addObject(article, this.do.searchQuery);
+    this.HTML2.addObject(article);
+    // HTML 1 // This one shows te search Query
     location.innerHTML = this.HTML.html;
+
+    // HTML 2 // This one does not show the search Query
+    // Uncomment the line below to see the composition magic
+    // location.innerHTML = this.HTML2.html;
   }
 }
 
