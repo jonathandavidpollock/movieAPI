@@ -13,10 +13,9 @@ class Controller {
     document.querySelector('button').addEventListener("click",(e)=>{
       e.preventDefault();
       console.log("Inside get data.");
-      this.MovieDo.movie = getMovie.value;
+      this.MovieDo.searchQuery = getMovie.value;
       this.sendData();
       this.view.setData(this.MovieDo);
-      this.view.display();
     })
   }
 
@@ -29,13 +28,21 @@ class Controller {
 
 class HTML {
   constructor(){
-    this.html = '<p>This is the HTML one style</p>';
+    this.html = '';
+  }
+
+  addObject(art) {
+    this.html = art;
   }
 }
 
 class HTML2 {
   constructor() {
-    this.html = '<h2>This is the HTML two style</h2>';
+    this.html = '';
+  }
+
+  addObject(obj) {
+    this.html = obj;
   }
 }
 
@@ -50,12 +57,14 @@ class View {
     this.do = d;
     console.log("/////////////");
     console.log(this.do);
-    this.display();
+    setTimeout(()=>{this.display();},500);
   }
 
   display() {
-    console.log(this.do.plot);
-    document.querySelector('#forJosh').innerHTML = this.do.plot;
+    let location = document.querySelector('#forJosh');
+    let article = Utility.make(this.do);
+    this.HTML.addObject(article);
+    location.innerHTML = this.HTML.html;
   }
 }
 
@@ -71,7 +80,7 @@ class Model {
   }
   process() {
     // Process with Fetch
-    let promise = fetch('http://www.omdbapi.com/?t=' + this.do.movie)
+    let promise = fetch('http://www.omdbapi.com/?t=' + this.do.searchQuery)
     promise.then(response => {
       return response.json();
     })
@@ -88,6 +97,7 @@ class Model {
 
 class MovieDo {
   constructor(){
+    this.searchQuery = '';
     this.movie = '';
     this.plot = '';
     this.director = '';
