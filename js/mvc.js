@@ -33,6 +33,7 @@ class HTML {
   }
 
   addObject(obj, search) {
+    this.html = '';
     this.html += `<h2>Results for: ${search}</h2>`
     this.html += obj;
   }
@@ -44,6 +45,7 @@ class HTML2 {
   }
 
   addObject(obj) {
+    this.html = '';
     this.html = obj;
   }
 }
