@@ -16,6 +16,7 @@ class Controller {
       this.MovieDo.searchQuery = getMovie.value;
       this.sendData();
       this.view.setData(this.MovieDo);
+      document.querySelector('form').reset();
     })
   }
 

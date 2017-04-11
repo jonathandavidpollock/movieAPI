@@ -13,6 +13,10 @@ body {
 
 }
 
+.wrapper {
+  max-width:700px;
+}
+
 form {
   padding-top:3rem;
   width:100%;
@@ -51,6 +55,11 @@ main {
   padding:2rem 0 4rem;
 }
 
+main > h2 {
+  font-size:3rem;
+  padding-bottom:2rem;
+}
+
 article {
   background-color: rgba(1,1,1,.5);
   border-radius: 10px;
@@ -59,7 +68,15 @@ article {
 article img {
   border-radius:10px;
   width:100%;
+  padding-bottom:1rem;
 }
+
+article h2 {
+  font-size:2.4rem;
+  margin-bottom:.7rem;
+}
+
+
 
 @keyframes panning {
   0% {
