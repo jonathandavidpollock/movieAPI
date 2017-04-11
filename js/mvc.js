@@ -90,7 +90,7 @@ class Model {
   }
   process() {
     // Process with Fetch
-    let promise = fetch('http://www.omdbapi.com/?t=' + this.do.searchQuery)
+    let promise = fetch('https://www.omdbapi.com/?t=' + this.do.searchQuery)
     promise.then(response => {
       return response.json();
     })
