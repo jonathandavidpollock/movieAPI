@@ -1,4 +1,4 @@
-# Movie API
+# Search for a movie with the OMDB Movie API
 This project uses the fetch API and the OMDB api to search for movies. Much like my [Spotify API Project](https://github.com/jonathandavidpollock/spotifyAPI),
 the appliction recieves a request from the user and performs a GET request to the [OMDB api](http://www.omdbapi.com/).
 
